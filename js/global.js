@@ -1,8 +1,31 @@
-fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
+
+var searchTerm
+
+function fetchData(){fetch('http://thinksaydo.com/tiyproxy.php?url=' + encodeURIComponent('https://openapi.etsy.com/v2/listings/active?api_key=h9oq2yf3twf4ziejn10b717i&keywords=' + encodeURIComponent('board games') + '&includes=Images,Shop'))
 .then(response => response.json())
 .then(response => response.results.forEach(function(item){
     makeThemBoxes(item)
 }))
+}
+
+var searchInput = document.getElementById('search-input')
+var searchButton = document.getElementById('search-button')
+
+searchInput.addEventListener('keypress', searchEnter)
+searchButton.addEventListener('click', search)
+
+function searchEnter(enter){
+    if(enter.key === 'Enter' ){
+        search()
+    }
+}
+
+function search(){
+    searchTerm = document.getElementById('search-input').value
+    fetchData()
+    document.getElementById('search-input').innerHTML = ''
+}
+
 
 function makeThemBoxes(item){
     var card = document.createElement('div')
