@@ -23,9 +23,8 @@ function searchEnter(enter){
 function search(){
     searchTerm = document.getElementById('search-input').value
     fetchData()
-    document.getElementById('search-input').innerHTML = ''
+    document.getElementById('searchResults').innerHTML = ''
 }
-
 
 function makeThemBoxes(item){
     var card = document.createElement('div')
@@ -45,7 +44,7 @@ function makeThemBoxes(item){
 
     var cardTextLeft = document.createElement('div')
     cardTextLeft.className ='col-xs-6 text-muted'
-    cardTextLeft.innerHTML = item.who_made
+    cardTextLeft.innerHTML = item.Shop.shop_name
     cardTextArea.appendChild(cardTextLeft)
 
     var cardTextRight = document.createElement('div')
