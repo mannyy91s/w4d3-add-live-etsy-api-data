@@ -47,7 +47,7 @@ body{
 }
 .top-right{
     ul{
-        padding-top: 12px;
+        // padding-top: 12px;
         font-size: 15px;
         a{
             padding-right: 5px;
@@ -107,7 +107,7 @@ body{
             display: inline-block;
         }
     }
-    .btn{
+    .btns{
         width: 15px;
         padding: 12px;
     }
@@ -171,5 +171,12 @@ footer{
     text-align: right;
 }
 .search-button{
+    background: $color2;
+}
+.sub-form{
+    width: 30%;
+    margin: auto;
+}
+.sub-button{
     background: $color2;
 }
